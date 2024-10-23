@@ -26,7 +26,8 @@ def create_property(request):
         property = form.save(commit=False)
         property.landlord = request.user
         property.save()
-
         return JsonResponse({'success': True})
     else:
-        print('error', form.errors, form.non_field_errors)
+        print('Form Error: ', form.errors)
+        print('Non-field Errors', form.errors, form.non_field_errors)
+        return JsonResponse({'error': form.errors.as_json()}, status=400)
