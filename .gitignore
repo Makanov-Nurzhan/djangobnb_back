@@ -65,7 +65,7 @@ eggs/
 logs/
 *.log
 docker-compose.override.yml
-.env.dev
+# .env.dev
 .env.prod
 
 # Ignore other OS or tool generated files
